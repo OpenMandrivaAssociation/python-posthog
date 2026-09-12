@@ -23,7 +23,8 @@ Requires:	python%{pyver}dist(typing-extensions)
 Official PostHog Python library. Aider uses it for optional telemetry.
 
 # sdist wants setuptools>=83; cooker ships 81
-%prep -a
+%prep
+%autosetup -n posthog-%{version}
 sed -i 's/setuptools>=83.0.0/setuptools>=61/' pyproject.toml
 
 %files
